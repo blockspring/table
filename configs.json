@@ -1,0 +1,125 @@
+{
+    "appearance": {
+        "gridlines": {
+          "readable": "Enable gridlines",
+          "category": "General",
+          "placeholder": true,
+          "values": true,
+          "description": "Turn gridlines on/off.",
+          "type": "boolean"
+        },
+        "column_text_alignment": {
+            "readable": "Column Text Alignment",
+            "category": "Format",
+            "placeholder": null,
+            "values": ["left", "left", "left", "left", "left", "left", "left", "left", "left", "left"],
+            "description": "Align column text to the left, center, or right of a column.",
+            "type": "text_alignment_multiple"
+        },
+        "gradient": {
+          "readable": "Column Gradients",
+          "category": "General",
+          "placeholder": null,
+          "values": [["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"]],
+          "description": "Choose the colors to be used for each column. <br/><br/>You can specify a gradient by using both colors: first color is minimum value, second color is maximum value.<br/><br/>If you want a column to be a single color, simply set both colors for that column to be the same.",
+          "type": "multiple_gradients"
+        },
+        "header_background_color": {
+          "readable": "Column header background color",
+          "category": "Headers",
+          "placeholder": "#FFFFFF",
+          "values": "#FFFFFF",
+          "description": "Choose a background color for headers",
+          "type": "color"
+        },
+        "header_font_color": {
+          "readable": "Column header font color",
+          "category": "Headers",
+          "placeholder": "#000000",
+          "values": "#000000",
+          "description": "Choose a font color for headers",
+          "type": "color"
+        },
+        "header_font_size": {
+          "readable": "Column header font size",
+          "category": "Headers",
+          "placeholder": 15,
+          "values": 15,
+          "description": "Choose a font size for headers",
+          "type": "number"
+        },
+        "enable_text_shadow": {
+          "readable": "Enable header text shadow",
+          "category": "Headers",
+          "placeholder": false,
+          "values": false,
+          "description": "Enable text shadow in headers",
+          "type": "boolean"
+        },
+        "text_shadow_color": {
+          "readable": "Header text shadow color",
+          "category": "Headers",
+          "placeholder": "#323232",
+          "values": "#323232",
+          "description": "If enabled, this will set the color of the shadow",
+          "type": "color"
+        },
+        "forcefit_columns": {
+          "readable": "Forcefit column widths",
+          "category": "Column Widths",
+          "placeholder": true,
+          "values": true,
+          "description": "If deactivated, you must set custom widths for each column.",
+          "type": "boolean"
+        },
+        "column_widths": {
+          "readable": "Set custom column widths",
+          "category": "Column Widths",
+          "placeholder": null,
+          "values": [null, null, null, null, null, null, null, null, null, null],
+          "description": "Sets column widths of table",
+          "type": "multiple_numbers"
+        },
+        "border_bottom": {
+          "readable": "Border bottom",
+          "category": "Headers",
+          "placeholder": false,
+          "values": false,
+          "description": "If activated, you'll see a black bottom border.",
+          "type": "boolean"
+        }
+    },
+    "roles": {
+        "columns": {
+            "allows_multiple": true,
+            "required": true,
+            "types": [
+                "string",
+                "date",
+                "number"
+            ],
+            "sample_columns": [
+                "Date",
+                "Open",
+                "High",
+                "Low",
+                "Close",
+                "Volume",
+                "Adjusted Close"
+            ],
+            "description": "These are columns for table."
+        },
+        "grafly_dropdowns": {
+           "allows_multiple": true,
+           "required": false,
+           "types": [
+             "string",
+             "date",
+             "number"
+           ],
+           "sample_columns": [
+           ],
+           "description": "dropdowns."
+        }
+    }
+}
