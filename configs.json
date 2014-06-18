@@ -1,125 +1,189 @@
 {
-    "appearance": {
-        "gridlines": {
-          "readable": "Enable gridlines",
-          "category": "General",
-          "placeholder": true,
-          "values": true,
-          "description": "Turn gridlines on/off.",
-          "type": "boolean"
-        },
-        "column_text_alignment": {
-            "readable": "Column Text Alignment",
-            "category": "Format",
-            "placeholder": null,
-            "values": ["left", "left", "left", "left", "left", "left", "left", "left", "left", "left"],
-            "description": "Align column text to the left, center, or right of a column.",
-            "type": "text_alignment_multiple"
-        },
-        "gradient": {
-          "readable": "Column Gradients",
-          "category": "General",
-          "placeholder": null,
-          "values": [["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"]],
-          "description": "Choose the colors to be used for each column. <br/><br/>You can specify a gradient by using both colors: first color is minimum value, second color is maximum value.<br/><br/>If you want a column to be a single color, simply set both colors for that column to be the same.",
-          "type": "multiple_gradients"
-        },
-        "header_background_color": {
-          "readable": "Column header background color",
-          "category": "Headers",
-          "placeholder": "#FFFFFF",
-          "values": "#FFFFFF",
-          "description": "Choose a background color for headers",
-          "type": "color"
-        },
-        "header_font_color": {
-          "readable": "Column header font color",
-          "category": "Headers",
-          "placeholder": "#000000",
-          "values": "#000000",
-          "description": "Choose a font color for headers",
-          "type": "color"
-        },
-        "header_font_size": {
-          "readable": "Column header font size",
-          "category": "Headers",
-          "placeholder": 15,
-          "values": 15,
-          "description": "Choose a font size for headers",
-          "type": "number"
-        },
-        "enable_text_shadow": {
-          "readable": "Enable header text shadow",
-          "category": "Headers",
-          "placeholder": false,
-          "values": false,
-          "description": "Enable text shadow in headers",
-          "type": "boolean"
-        },
-        "text_shadow_color": {
-          "readable": "Header text shadow color",
-          "category": "Headers",
-          "placeholder": "#323232",
-          "values": "#323232",
-          "description": "If enabled, this will set the color of the shadow",
-          "type": "color"
-        },
-        "forcefit_columns": {
-          "readable": "Forcefit column widths",
-          "category": "Column Widths",
-          "placeholder": true,
-          "values": true,
-          "description": "If deactivated, you must set custom widths for each column.",
-          "type": "boolean"
-        },
-        "column_widths": {
-          "readable": "Set custom column widths",
-          "category": "Column Widths",
-          "placeholder": null,
-          "values": [null, null, null, null, null, null, null, null, null, null],
-          "description": "Sets column widths of table",
-          "type": "multiple_numbers"
-        },
-        "border_bottom": {
-          "readable": "Border bottom",
-          "category": "Headers",
-          "placeholder": false,
-          "values": false,
-          "description": "If activated, you'll see a black bottom border.",
-          "type": "boolean"
-        }
+  "appearance": {
+    "show_gridlines": {
+      "readable": "Show gridlines",
+      "category": "Gridlines",
+      "placeholder": true,
+      "values": true,
+      "description": "Turn gridlines on/off.",
+      "type": "boolean"
     },
-    "roles": {
-        "columns": {
-            "allows_multiple": true,
-            "required": true,
-            "types": [
-                "string",
-                "date",
-                "number"
-            ],
-            "sample_columns": [
-                "Date",
-                "Open",
-                "High",
-                "Low",
-                "Close",
-                "Volume",
-                "Adjusted Close"
-            ],
-            "description": "These are columns for table."
-        },
-        "grafly_dropdowns": {
-           "allows_multiple": true,
-           "required": false,
-           "types": [
-             "string",
-             "date",
-             "number"
-           ],
-           "sample_columns": [
-           ],
-           "description": "dropdowns."
-        }
+    "vertical_gridline_colors": {
+      "readable": "Vertical Gridline Colors",
+      "category": "Gridlines",
+      "placeholder": true,
+      "values": "#dddddd",
+      "description": "Change the color of your vertical gridlines.",
+      "type": "color"
+    },
+    "horizontal_gridline_colors": {
+      "readable": "Horizontal Gridline Color",
+      "category": "Gridlines",
+      "placeholder": true,
+      "values": "#dddddd",
+      "description": "Change the color of your horizontal gridlines.",
+      "type": "color"
+    },
+    "header_background_color": {
+      "readable": "Background color",
+      "category": "Header Row",
+      "placeholder": "#FFFFFF",
+      "values": "#FFFFFF",
+      "description": "Changes the background color of your header row.",
+      "type": "color"
+    },
+    "header_font_color": {
+      "readable": "Font Color",
+      "category": "Header Row",
+      "placeholder": "#000000",
+      "values": "#000000",
+      "description": "Choose a font color for headers",
+      "type": "color"
+    },
+    "header_font_size": {
+      "readable": "Font Size",
+      "category": "Header Row",
+      "placeholder": 13,
+      "values": 13,
+      "description": "Choose a font size for headers",
+      "type": "number"
+    },
+    "enable_text_shadow": {
+      "readable": "Show Text Shadow",
+      "category": "Header Row",
+      "placeholder": false,
+      "values": false,
+      "description": "Text shadows can make fonts pop off a page more. Just keep it subtle!",
+      "type": "boolean"
+    },
+    "text_shadow_color": {
+      "readable": "Text Shadow Color",
+      "category": "Header Row",
+      "placeholder": "#323232",
+      "values": "#323232",
+      "description": "Set the color of your column header's text shadow.",
+      "type": "color"
+    },
+    "border_bottom": {
+      "readable": "Show Bottom Border",
+      "category": "Header Row",
+      "placeholder": false,
+      "values": false,
+      "description": "Creates a colored bottom border for your header row.",
+      "type": "boolean"
+    },
+    "striped_rows": {
+      "readable": "Striped Rows",
+      "category": "Rows",
+      "placeholder": null,
+      "values": true,
+      "description": "Alternate row colors. Helps with horizontal readability, hurts vertical readability.",
+      "type": "boolean"
+    },
+    "hover_rows": {
+      "readable": "Highlight on hover",
+      "category": "Rows",
+      "placeholder": null,
+      "values": true,
+      "description": "Highlights rows on mouse hover.",
+      "type": "boolean"
+    },
+    "column_text_alignment": {
+      "readable": "Column Text Alignment",
+      "category": "Text Alignment",
+      "placeholder": null,
+      "values": ["left", "left", "left", "left", "left", "left", "left", "left", "left", "left"],
+      "description": "Align text to the left, center, or right of a column.",
+      "type": "text_alignment_multiple"
+    },
+    "forcefit_columns": {
+      "readable": "Stretch to 100% Width",
+      "category": "Column Widths",
+      "placeholder": true,
+      "values": true,
+      "description": "Stretchs table to horizontally fill the page or dashboard widget. When deactivated, this will show a scrollbar if all columns don't fit in the container.<br/><br/>This is good for tables with 1-5 columns. For larger tables, you may prefer a horizontal scrollbar.",
+      "type": "boolean"
+    },
+    "column_widths": {
+      "readable": "Column widths",
+      "category": "Column Widths",
+      "placeholder": "Auto",
+      "values": [null, null, null, null, null, null, null, null, null, null],
+      "description": "Set the width of each column in pixels.",
+      "type": "multiple_numbers"
+    },
+    "gradient": {
+      "readable": "Column Gradients",
+      "category": "Column Gradients",
+      "placeholder": null,
+      "values": [["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"],["#ffffff","#ffffff"]],
+      "description": "Choose the colors to be used for each column. <br/><br/>You can specify a gradient by using both colors: first color is minimum value, second color is maximum value.<br/><br/>If you want a column to be a single color, simply set both colors for that column to be the same.",
+      "type": "multiple_gradients"
+    },
+    "border_bottom": {
+      "readable": "Border bottom",
+      "category": "Header Row",
+      "placeholder": false,
+      "values": false,
+      "description": "If activated, you'll see a black bottom border.",
+      "type": "boolean"
+    },
+    "histo_enable": {
+      "readable": "Show Histograms",
+      "category": "Frequency Histograms",
+      "placeholder": true,
+      "values": true,
+      "description": "When activated, hovering over column titles will show a frequency histogram.",
+      "type": "boolean"
+    },
+    "histo_color": {
+      "readable": "Bar Color",
+      "category": "Frequency Histograms",
+      "placeholder": "#4682b4",
+      "values": "#4682b4",
+      "description": "Set histogram bar color.",
+      "type": "color"
+    },
+    "histo_ticks": {
+      "readable": "# of buckets",
+      "category": "Frequency Histograms",
+      "placeholder": 10,
+      "values": 20,
+      "description": "Histograms show the # of items per bucket. <br/>This option lets you change the # of buckets to get a broader or more granular view of each column's distribution.",
+      "type": "number"
     }
+  },
+  "roles": {
+      "columns": {
+          "allows_multiple": true,
+          "required": true,
+          "types": [
+              "string",
+              "date",
+              "number"
+          ],
+          "sample_columns": [
+              "Date",
+              "Open",
+              "High",
+              "Low",
+              "Close",
+              "Volume",
+              "Adjusted Close"
+          ],
+          "description": "These are columns for table."
+      },
+      "grafly_dropdowns": {
+         "allows_multiple": true,
+         "required": false,
+         "types": [
+           "string",
+           "date",
+           "number"
+         ],
+         "sample_columns": [
+         ],
+         "description": "dropdowns."
+      }
+  }
 }
