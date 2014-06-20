@@ -38,8 +38,8 @@ var graph = {
 
     $(svgInput).empty();
 
-    var height = $(window).height() - 60;
-    var width = $(window).width();
+    var height = $(document).height() - 60;
+    var width = $(document).width();
 
     if (Block.vars.csv.columnRoleMap.grafly_dropdowns.length != 0){
       $('#myGrid').css('top',60);
