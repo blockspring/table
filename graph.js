@@ -7,6 +7,9 @@ var graph = {
 
     var histo_array = {};
 
+    console.log(data);
+    console.log(Block.vars.csv);
+
     Block.vars.csv.columnRoleMap.columns.forEach(function(column, i){
       histo_array[i] = [];
     })
