@@ -7,9 +7,6 @@ var graph = {
 
     var histo_array = {};
 
-    console.log(data);
-    console.log(Block.vars.csv);
-
     Block.vars.csv.columnRoleMap.columns.forEach(function(column, i){
       histo_array[i] = [];
     })
@@ -70,7 +67,7 @@ var graph = {
             gradient_list.push(variable_name);
         } else if (Block.vars.csv.columnMetaData[variable_name] && Block.vars.csv.columnMetaData[variable_name].type == 'string'){
           scales[variable_name] = d3.scale.linear()
-            .domain([0, Block.vars.csv.columnMetaData[variable_name].uniques.length - 1])
+            .domain([0, Object.keys(Block.vars.csv.columnMetaData[variable_name].formatLibrary).length - 1])
             .range([start_color, end_color]);
           gradient_list.push(variable_name);
         } 
@@ -264,7 +261,7 @@ var graph = {
     function gradient_formatter(row, cell, value, columnDef, dataContext){
       var header_name = column_titles[cell];
       if (Block.vars.csv.columnMetaData[header_name].type == 'string'){
-        var indexValue = Block.vars.csv.columnMetaData[header_name].uniques.indexOf(value);
+        var indexValue = Object.keys(Block.vars.csv.columnMetaData[header_name].formatLibrary).indexOf(value);
         var color = scales[header_name](indexValue);
       } else {
         var color = scales[header_name](value);
