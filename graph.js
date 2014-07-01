@@ -282,6 +282,11 @@ var graph = {
         var column_width = $($('.slick-header-column')[i]).width();
         var column_height = $($('.slick-header-column')[i]).height();
         var left_position = $($('.slick-header-column')[i]).offset().left;
+        var top_offset = 0;
+        if (Block.vars.csv.columnRoleMap.grafly_dropdowns.length != 0){
+          $('#myGrid').css('top',60);
+          top_offset = 60;
+        }
 
         var variable_type = Block.vars.csv.columnMetaData[$($('.slick-header-column')[i])[0].title].type;
         
@@ -289,7 +294,7 @@ var graph = {
             d3.select('#tooltip').classed('hidden', false)
               .style('width', column_width)
               .style('height', column_height * 3)
-              .style('top', column_height)
+              .style('top', column_height + top_offset)
               .style('left', left_position)
               .style('z-index', 2);
 
